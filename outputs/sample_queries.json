@@ -1,0 +1,62 @@
+{
+  "model": "gpt-4o-mini",
+  "timestamp": "2025-11-10T08:15:00.449266+00:00",
+  "tokens_prompt": 356,
+  "tokens_completion": 60,
+  "total_tokens": 416,
+  "latency_ms": 10799.55,
+  "estimated_cost_usd": 8.9e-05,
+  "actions": [
+    "Provide detailed information on account issues",
+    "Explain product and inventory assistance options",
+    "Offer to answer specific questions from the user"
+  ],
+  "user_question": "What kind of things can you assist me with?",
+  "system_answer": "We can assist with account and technical issues, product inquiries, and inventory questions.",
+  "chunks_related": [
+    "service team. We're here to help! Email: support@yourcompany.com",
+    "Account & Technical Issues Q: How do I reset my password? A: Click on \"Log In\" and then the \"Forgot Password?\" link. Enter the email address associated with your account, and we will send you a link to create a",
+    "like Chrome or Firefox. If the problem persists, please contact our support team and let us know what device and browser you are using. Product & Inventory Q: How can I be notified when an out-of-stock item is back? A:"
+  ]
+}
+{
+  "model": "gpt-4o-mini",
+  "timestamp": "2025-11-10T08:18:10.006961+00:00",
+  "tokens_prompt": 404,
+  "tokens_completion": 73,
+  "total_tokens": 477,
+  "latency_ms": 3058.7,
+  "estimated_cost_usd": 0.000104,
+  "actions": [
+    "Guide the user to their account for refund initiation",
+    "Provide support contact information"
+  ],
+  "user_question": "There was a mistake with my order. Can I get a refund, and how can I request for it?",
+  "system_answer": "Yes, you can request a refund for your order. To initiate the refund process, please go to your account on our website under 'Order History' or contact our support team for assistance.",
+  "chunks_related": [
+    "faulty. Q: How do I start a return or exchange? A: The easiest way is to initiate the process through your account on our website under \"Order History.\" Alternatively, you can contact our support team, and we will guide you",
+    "modify or cancel my order after placing it? A: We can only modify or cancel an order if it hasn't yet entered the packing process. Please contact us immediately at support@yourcompany.com or call us at [Your Phone Number] with your",
+    "process the refund. The time it takes for the refund to appear in your account will depend on your bank or payment provider (typically 5-10 additional business days). Q: Who pays for return shipping? A: We provide a pre-paid return"
+  ]
+}
+{
+  "model": "gpt-4o-mini",
+  "timestamp": "2025-11-10T09:52:31.832963+00:00",
+  "tokens_prompt": 406,
+  "tokens_completion": 84,
+  "total_tokens": 490,
+  "latency_ms": 4094.1,
+  "estimated_cost_usd": 0.000111,
+  "actions": [
+    "Provide instructions for resetting the password",
+    "Assist the user if they encounter issues"
+  ],
+  "source": "faq_document",
+  "user_question": "Is there a way for me to reset my password?",
+  "system_answer": "Yes, you can reset your password by clicking on 'Log In' and then the 'Forgot Password?' link. Enter your email address, and we will send you a link to create a new password.",
+  "chunks_related": [
+    "Account & Technical Issues Q: How do I reset my password? A: Click on \"Log In\" and then the \"Forgot Password?\" link. Enter the email address associated with your account, and we will send you a link to create a\nSource: faq_document",
+    "create a new password. Q: Can I check out as a guest? A: Yes, you can! However, creating an account allows you to track your orders easily, save your address for faster checkout, and view your order history. Q: The\nSource: faq_document",
+    "service team. We're here to help! Email: support@yourcompany.com\nSource: faq_document"
+  ]
+}

@@ -18,8 +18,8 @@ import torch
 
 dotenv.load_dotenv()
 
-DIM = 384
-index = faiss.IndexFlatL2(DIM)
+DIM = os.getenv('VECTOR_DIM')
+index = faiss.IndexFlatL2(int(DIM))
 
 def load_document(path:str) -> str:
     """
@@ -100,7 +100,7 @@ def save_chunks_metadata(metadata_map: dict, path: str):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     
     with open(path, 'w') as f:
-        json.dump(metadata_map, f)
+        json.dump(metadata_map, f, indent=4)
 
 def generate_embeddings(chunks:[dict], batch_size: int = 16):
     """
@@ -145,23 +145,6 @@ def make_embedding(text: str) -> np.array:
     """
     return generate_embeddings([{"text": text}])[0]
 
-def load_embeddings(path: str) -> [dict]:
-    """
-    Arguments:
-        path: File path to load the embeddings from
-    Returns:
-        A list of embeddings, each embedding is a dictionary with the following keys:
-            - vector: A list of floats
-            - metadata: A dictionary with the following keys:
-                - id: A string
-
-                - doc_type: A string
-                - department: A string
-    """
-    # Takes a file path and loads the embeddings from it
-    with open(path, 'r') as f:
-        return [json.loads(line) for line in f]
-
 
 def main():
     """Main entry point for the build script."""
@@ -174,8 +157,10 @@ def main():
     chunks = create_chunks_with_metadata(document_id="faq_document", document_text=text)
     embeddings = generate_embeddings(chunks)
 
-    for chunk, embedding_vector in zip(chunks, embeddings):
-        chunk["embedding"] = embedding_vector
+    # This is optional. It can be uncommented to save the embeddings to the chunks
+    # I commented it out because it makes the chunks file too large and slows down the query process.
+    # for chunk, embedding_vector in zip(chunks, embeddings):
+    #     chunk["embedding"] = embedding_vector
 
     vectors = np.array(embeddings).astype("float32")
     faiss.normalize_L2(vectors)
@@ -188,10 +173,10 @@ def main():
     for offset, chunk in enumerate(chunks):
         metadata_map[start_id + offset] = chunk
 
-    os.makedirs('outputs', exist_ok=True)
-    faiss.write_index(index, 'outputs/index.faiss')
+    os.makedirs('storage', exist_ok=True)
+    faiss.write_index(index, 'storage/index.faiss')
 
-    save_chunks_metadata(metadata_map, 'outputs/chunks.json')
+    save_chunks_metadata(metadata_map, 'storage/chunks.json')
 
 if __name__ == "__main__":
     main()

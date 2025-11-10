@@ -8,13 +8,14 @@ import json
 import faiss
 import numpy as np
 from src.build_index import make_embedding
+from model_api.endpoint import log_metrics, process_query
 
 
 def load_faiss_index():
     """
     Load the faiss index from the file system
     """
-    index_path = 'outputs/index.faiss'
+    index_path = 'storage/index.faiss'
     if os.path.exists(index_path):
         return faiss.read_index(index_path)
     else:
@@ -25,34 +26,13 @@ def load_chunks():
     """
     Load the chunks from the file system
     """
-    chunks_path = 'outputs/chunks.json'
+    chunks_path = 'storage/chunks.json'
     if os.path.exists(chunks_path):
         return json.load(open(chunks_path))
     else:
         print(f"Warning: Chunks file not found at {chunks_path}. Please run build_index.py first.", file=sys.stderr)
         sys.exit(1)
 
-
-def hybrid_search(embedded_user_prompt, embeddings):
-    """
-    Arguments:
-        embedded_user_prompt: An embedded user prompt
-        embeddings: A list of embeddings
-    Returns:
-        A list of results
-    """
-    pass
-
-def query_index(embedded_user_prompt, embeddings):
-
-    """
-    Arguments:
-        embedded_user_prompt: An embedded user prompt
-        embeddings: A list of embeddings
-    Returns:
-        A list of results
-    """
-    pass
 
 
 index = load_faiss_index()
@@ -71,9 +51,19 @@ def main():
         faiss.normalize_L2(query_vector)
         D, I = index.search(query_vector, k=3)
 
+        faq_chunks = [f"{chunks[str(faiss_id)]["text"]}\nSource: {chunks[str(faiss_id)]["document_id"]}" for faiss_id in I[0]]
 
-        for faiss_id in I[0]:
-            print(chunks[str(faiss_id)]["text"])
+        response, metrics = process_query(user_prompt, "\n".join(faq_chunks))
+
+        if metrics.get("estimated_cost_usd", 0) > 0:
+            metrics["actions"] = response["actions"]
+            metrics["source"] = response["source"]
+            metrics["user_question"] = user_prompt
+            metrics["system_answer"] = response["answer"]
+            metrics["chunks_related"] = faq_chunks
+            log_metrics(metrics)
+
+        print("\nMetrics:", json.dumps(metrics, indent=2))
 
     except Exception as e:
         print(f"Error: {str(e)}", file=sys.stderr)
