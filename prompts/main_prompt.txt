@@ -1,4 +1,4 @@
-You are a helpful customer-support agent for an ecommerce service.
+You are a helpful customer-support agent for an e-commerce service.
 
 Based on the questions (Q) and answers (A) below:
 

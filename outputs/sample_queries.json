@@ -1,62 +1,147 @@
-{
-  "model": "gpt-4o-mini",
-  "timestamp": "2025-11-10T08:15:00.449266+00:00",
-  "tokens_prompt": 356,
-  "tokens_completion": 60,
-  "total_tokens": 416,
-  "latency_ms": 10799.55,
-  "estimated_cost_usd": 8.9e-05,
-  "actions": [
-    "Provide detailed information on account issues",
-    "Explain product and inventory assistance options",
-    "Offer to answer specific questions from the user"
-  ],
-  "user_question": "What kind of things can you assist me with?",
-  "system_answer": "We can assist with account and technical issues, product inquiries, and inventory questions.",
-  "chunks_related": [
-    "service team. We're here to help! Email: support@yourcompany.com",
-    "Account & Technical Issues Q: How do I reset my password? A: Click on \"Log In\" and then the \"Forgot Password?\" link. Enter the email address associated with your account, and we will send you a link to create a",
-    "like Chrome or Firefox. If the problem persists, please contact our support team and let us know what device and browser you are using. Product & Inventory Q: How can I be notified when an out-of-stock item is back? A:"
-  ]
-}
-{
-  "model": "gpt-4o-mini",
-  "timestamp": "2025-11-10T08:18:10.006961+00:00",
-  "tokens_prompt": 404,
-  "tokens_completion": 73,
-  "total_tokens": 477,
-  "latency_ms": 3058.7,
-  "estimated_cost_usd": 0.000104,
-  "actions": [
-    "Guide the user to their account for refund initiation",
-    "Provide support contact information"
-  ],
-  "user_question": "There was a mistake with my order. Can I get a refund, and how can I request for it?",
-  "system_answer": "Yes, you can request a refund for your order. To initiate the refund process, please go to your account on our website under 'Order History' or contact our support team for assistance.",
-  "chunks_related": [
-    "faulty. Q: How do I start a return or exchange? A: The easiest way is to initiate the process through your account on our website under \"Order History.\" Alternatively, you can contact our support team, and we will guide you",
-    "modify or cancel my order after placing it? A: We can only modify or cancel an order if it hasn't yet entered the packing process. Please contact us immediately at support@yourcompany.com or call us at [Your Phone Number] with your",
-    "process the refund. The time it takes for the refund to appear in your account will depend on your bank or payment provider (typically 5-10 additional business days). Q: Who pays for return shipping? A: We provide a pre-paid return"
-  ]
-}
-{
-  "model": "gpt-4o-mini",
-  "timestamp": "2025-11-10T09:52:31.832963+00:00",
-  "tokens_prompt": 406,
-  "tokens_completion": 84,
-  "total_tokens": 490,
-  "latency_ms": 4094.1,
-  "estimated_cost_usd": 0.000111,
-  "actions": [
-    "Provide instructions for resetting the password",
-    "Assist the user if they encounter issues"
-  ],
-  "source": "faq_document",
-  "user_question": "Is there a way for me to reset my password?",
-  "system_answer": "Yes, you can reset your password by clicking on 'Log In' and then the 'Forgot Password?' link. Enter your email address, and we will send you a link to create a new password.",
-  "chunks_related": [
-    "Account & Technical Issues Q: How do I reset my password? A: Click on \"Log In\" and then the \"Forgot Password?\" link. Enter the email address associated with your account, and we will send you a link to create a\nSource: faq_document",
-    "create a new password. Q: Can I check out as a guest? A: Yes, you can! However, creating an account allows you to track your orders easily, save your address for faster checkout, and view your order history. Q: The\nSource: faq_document",
-    "service team. We're here to help! Email: support@yourcompany.com\nSource: faq_document"
-  ]
-}
+[
+  {
+    "model": "gpt-4o-mini",
+    "timestamp": "2025-11-11T10:26:35.830009+00:00",
+    "tokens_prompt": 600,
+    "tokens_completion": 49,
+    "total_tokens": 649,
+    "latency_ms": 0,
+    "estimated_cost_usd": 0.0,
+    "cache_hit": true,
+    "actions": [
+      "Provide detailed shipping options at checkout",
+      "Confirm user location for accurate shipping costs"
+    ],
+    "source": [
+      "faq_document"
+    ],
+    "user_question": "What are your shipping options?",
+    "system_answer": "We offer several shipping options including Standard Shipping (3-7 business days), Express Shipping (2-3 business days), and Next-Day Shipping (order by 1 PM for next business day delivery).",
+    "chunks_related": [
+      "Q: Why was my payment declined?\nA: Payment can be declined for several reasons, including insufficient funds, incorrect card information, or a security check by your bank. Please verify your details and try again, or contact your bank for more information.\n\nShipping & Delivery\nQ: What are your shipping options and costs?\nA: We offer several shipping options at checkout, with costs calculated based on your location, package weight, and delivery speed. Standard shipping (3-7 business days) often has a flat rate or is free on orders over a certain amount. Express and Next-Day options are also available.\n\nQ: How long will it take to receive my order?\n\nStandard Shipping: 3-7 business days.\n\nExpress Shipping: 2-3 business days.\n\nNext-Day Shipping: Order by 1 PM local time for delivery the next business day (where available).\n\n*Please note: Processing time (1-2 business days) is separate from shipping time.*\nSource: data/faq_document.txt",
+      "Next-Day Shipping: Order by 1 PM local time for delivery the next business day (where available).\n\n*Please note: Processing time (1-2 business days) is separate from shipping time.*\n\nQ: Do you ship internationally?\nA: Not at this time. We currently only ship within [Your Country, e.g., the United States]. We hope to offer international shipping in the future!\n\nQ: How can I track my order?\nA: Once your order ships, you will receive a shipping confirmation email with a tracking number and a link to track your package. You can also log into your account on our website to view your order status and tracking information.\n\nQ: My tracking hasn't updated in a while. What should I do?\nA: Carrier scans can sometimes be delayed. If your tracking hasn't updated for more than 48 hours after the expected scan, please contact us with your order number, and we will investigate with the shipping carrier on your behalf.\nSource: data/faq_document.txt",
+      "Q: Who pays for return shipping?\nA: We provide a pre-paid return label for items that are faulty or incorrect due to our error. For returns based on change of mind, the return shipping cost is the responsibility of the customer and will be deducted from your refund.\n\nAccount & Technical Issues\nQ: How do I reset my password?\nA: Click on \"Log In\" and then the \"Forgot Password?\" link. Enter the email address associated with your account, and we will send you a link to create a new password.\n\nQ: Can I check out as a guest?\nA: Yes, you can! However, creating an account allows you to track your orders easily, save your address for faster checkout, and view your order history.\nSource: data/faq_document.txt"
+    ],
+    "confidence": 90,
+    "evaluation": {
+      "overall_score": 9.1,
+      "quality_level": "excellent",
+      "relevance_score": 10,
+      "accuracy_score": 10,
+      "completeness_score": 8,
+      "clarity_score": 9,
+      "improvements": [
+        "Include information about shipping costs and conditions, such as free shipping thresholds.",
+        "Consider making the answer more concise by removing any repetitive phrases."
+      ]
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "timestamp": "2025-11-11T11:19:04.848501+00:00",
+    "tokens_prompt": 600,
+    "tokens_completion": 49,
+    "total_tokens": 649,
+    "latency_ms": 0,
+    "estimated_cost_usd": 0.0,
+    "cache_hit": true,
+    "actions": [
+      "Provide detailed shipping options at checkout",
+      "Confirm user location for accurate shipping costs"
+    ],
+    "source": [
+      "faq_document"
+    ],
+    "user_question": "What are your shipping options?",
+    "system_answer": "We offer several shipping options including Standard Shipping (3-7 business days), Express Shipping (2-3 business days), and Next-Day Shipping (order by 1 PM for next business day delivery).",
+    "chunks_related": [
+      "Q: Why was my payment declined?\nA: Payment can be declined for several reasons, including insufficient funds, incorrect card information, or a security check by your bank. Please verify your details and try again, or contact your bank for more information.\n\nShipping & Delivery\nQ: What are your shipping options and costs?\nA: We offer several shipping options at checkout, with costs calculated based on your location, package weight, and delivery speed. Standard shipping (3-7 business days) often has a flat rate or is free on orders over a certain amount. Express and Next-Day options are also available.\n\nQ: How long will it take to receive my order?\n\nStandard Shipping: 3-7 business days.\n\nExpress Shipping: 2-3 business days.\n\nNext-Day Shipping: Order by 1 PM local time for delivery the next business day (where available).\n\n*Please note: Processing time (1-2 business days) is separate from shipping time.*\nSource: data/faq_document.txt",
+      "Next-Day Shipping: Order by 1 PM local time for delivery the next business day (where available).\n\n*Please note: Processing time (1-2 business days) is separate from shipping time.*\n\nQ: Do you ship internationally?\nA: Not at this time. We currently only ship within [Your Country, e.g., the United States]. We hope to offer international shipping in the future!\n\nQ: How can I track my order?\nA: Once your order ships, you will receive a shipping confirmation email with a tracking number and a link to track your package. You can also log into your account on our website to view your order status and tracking information.\n\nQ: My tracking hasn't updated in a while. What should I do?\nA: Carrier scans can sometimes be delayed. If your tracking hasn't updated for more than 48 hours after the expected scan, please contact us with your order number, and we will investigate with the shipping carrier on your behalf.\nSource: data/faq_document.txt",
+      "Q: Who pays for return shipping?\nA: We provide a pre-paid return label for items that are faulty or incorrect due to our error. For returns based on change of mind, the return shipping cost is the responsibility of the customer and will be deducted from your refund.\n\nAccount & Technical Issues\nQ: How do I reset my password?\nA: Click on \"Log In\" and then the \"Forgot Password?\" link. Enter the email address associated with your account, and we will send you a link to create a new password.\n\nQ: Can I check out as a guest?\nA: Yes, you can! However, creating an account allows you to track your orders easily, save your address for faster checkout, and view your order history.\nSource: data/faq_document.txt"
+    ],
+    "confidence": 90,
+    "evaluation": {
+      "overall_score": 9.1,
+      "quality_level": "excellent",
+      "relevance_score": 10,
+      "accuracy_score": 10,
+      "completeness_score": 8,
+      "clarity_score": 9,
+      "improvements": [
+        "Mention that shipping costs are calculated based on location and package weight.",
+        "Consider making the answer more concise by removing repetitive information about Next-Day Shipping."
+      ]
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "timestamp": "2025-11-11T11:20:27.043479+00:00",
+    "tokens_prompt": 599,
+    "tokens_completion": 38,
+    "total_tokens": 637,
+    "latency_ms": 2106.55,
+    "estimated_cost_usd": 0.000113,
+    "cache_hit": false,
+    "actions": [
+      "Suggest the user contact customer support for specific inquiries",
+      "Check for any current promotions or sales"
+    ],
+    "source": [
+      "fallback"
+    ],
+    "user_question": "Do I get discounts for bulk purchases?",
+    "system_answer": "We do not have information regarding discounts for bulk purchases in our current FAQs.",
+    "chunks_related": [
+      "Q: Who pays for return shipping?\nA: We provide a pre-paid return label for items that are faulty or incorrect due to our error. For returns based on change of mind, the return shipping cost is the responsibility of the customer and will be deducted from your refund.\n\nAccount & Technical Issues\nQ: How do I reset my password?\nA: Click on \"Log In\" and then the \"Forgot Password?\" link. Enter the email address associated with your account, and we will send you a link to create a new password.\n\nQ: Can I check out as a guest?\nA: Yes, you can! However, creating an account allows you to track your orders easily, save your address for faster checkout, and view your order history.\nSource: data/faq_document.txt",
+      "Returns, Exchanges & Refunds\nQ: What is your return policy?\nA: We offer a 30-day return policy from the date of delivery for most items in original, unworn, and resalable condition, with original tags and packaging. For hygiene reasons, some items (like underwear, swimwear, and pierced jewelry) are final sale unless faulty.\n\nQ: How do I start a return or exchange?\nA: The easiest way is to initiate the process through your account on our website under \"Order History.\" Alternatively, you can contact our support team, and we will guide you through the steps and provide a return shipping label if applicable.\n\nQ: How long does it take to process a refund?\nA: Once we receive your returned item, it takes 3-5 business days to inspect and process the refund. The time it takes for the refund to appear in your account will depend on your bank or payment provider (typically 5-10 additional business days).\nSource: data/faq_document.txt",
+      "Q: Can I check out as a guest?\nA: Yes, you can! However, creating an account allows you to track your orders easily, save your address for faster checkout, and view your order history.\n\nQ: The website is not working correctly on my browser. What should I do?\nA: We recommend trying a hard refresh (Ctrl+F5 on Windows, Cmd+Shift+R on Mac), clearing your browser's cache and cookies, or trying a different browser like Chrome or Firefox. If the problem persists, please contact our support team and let us know what device and browser you are using.\n\nProduct & Inventory\nQ: How can I be notified when an out-of-stock item is back?\nA: On the product page of the item you want, simply click the \"Notify Me When Available\" button and enter your email address. We'll send you an alert the moment it's back in stock!\nSource: data/faq_document.txt"
+    ],
+    "confidence": 20,
+    "evaluation": {
+      "overall_score": 5.4,
+      "quality_level": "poor",
+      "relevance_score": 2,
+      "accuracy_score": 10,
+      "completeness_score": 2,
+      "clarity_score": 8,
+      "improvements": [
+        "Include a suggestion for the user to contact customer support for more information on bulk purchase discounts.",
+        "Provide a brief explanation of where bulk purchase information might typically be found, such as on the website or in promotional materials."
+      ]
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "timestamp": "2025-11-11T11:22:08.523218+00:00",
+    "tokens_prompt": 573,
+    "tokens_completion": 49,
+    "total_tokens": 622,
+    "latency_ms": 3200.42,
+    "estimated_cost_usd": 0.000115,
+    "cache_hit": false,
+    "actions": [
+      "Contact the user for their order number",
+      "Check order status to confirm if it can be canceled"
+    ],
+    "source": [
+      "Ordering & Payment"
+    ],
+    "user_question": "Can I cancel my order?",
+    "system_answer": "You can cancel your order only if it hasn't yet entered the packing process. Please contact us immediately with your order number.",
+    "chunks_related": [
+      "Ordering & Payment\nQ: What payment methods do you accept?\nA: We accept all major credit/debit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay. All payments are processed through a secure, encrypted gateway for your safety.\n\nQ: Is my payment information secure?\nA: Absolutely. We do not store your full payment details on our servers. All transactions are processed by PCI-DSS compliant payment gateways, ensuring the highest level of security.\n\nQ: Can I modify or cancel my order after placing it?\nA: We can only modify or cancel an order if it hasn't yet entered the packing process. Please contact us immediately at support@yourcompany.com or call us at [Your Phone Number] with your order number. We cannot guarantee changes once an order is being prepared for shipment.\nSource: data/faq_document.txt",
+      "Q: Who pays for return shipping?\nA: We provide a pre-paid return label for items that are faulty or incorrect due to our error. For returns based on change of mind, the return shipping cost is the responsibility of the customer and will be deducted from your refund.\n\nAccount & Technical Issues\nQ: How do I reset my password?\nA: Click on \"Log In\" and then the \"Forgot Password?\" link. Enter the email address associated with your account, and we will send you a link to create a new password.\n\nQ: Can I check out as a guest?\nA: Yes, you can! However, creating an account allows you to track your orders easily, save your address for faster checkout, and view your order history.\nSource: data/faq_document.txt",
+      "Q: Why was my payment declined?\nA: Payment can be declined for several reasons, including insufficient funds, incorrect card information, or a security check by your bank. Please verify your details and try again, or contact your bank for more information.\n\nShipping & Delivery\nQ: What are your shipping options and costs?\nA: We offer several shipping options at checkout, with costs calculated based on your location, package weight, and delivery speed. Standard shipping (3-7 business days) often has a flat rate or is free on orders over a certain amount. Express and Next-Day options are also available.\n\nQ: How long will it take to receive my order?\n\nStandard Shipping: 3-7 business days.\n\nExpress Shipping: 2-3 business days.\n\nNext-Day Shipping: Order by 1 PM local time for delivery the next business day (where available).\n\n*Please note: Processing time (1-2 business days) is separate from shipping time.*\nSource: data/faq_document.txt"
+    ],
+    "confidence": 90,
+    "evaluation": {
+      "overall_score": 9.1,
+      "quality_level": "excellent",
+      "relevance_score": 10,
+      "accuracy_score": 10,
+      "completeness_score": 8,
+      "clarity_score": 9,
+      "improvements": []
+    }
+  }
+]
