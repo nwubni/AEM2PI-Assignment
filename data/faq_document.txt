@@ -1,79 +1,138 @@
-Ordering & Payment
-Q: What payment methods do you accept?
-A: We accept all major credit/debit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay. All payments are processed through a secure, encrypted gateway for your safety.
+Employee Onboarding & Account Setup
+Q: How do I access my employee portal for the first time?
+A: New employees receive a welcome email with login credentials and a link to the employee portal. If you haven't received this email, contact HR at hr@company.com or call extension 1234. You'll need to set up two-factor authentication on your first login.
 
-Q: Is my payment information secure?
-A: Absolutely. We do not store your full payment details on our servers. All transactions are processed by PCI-DSS compliant payment gateways, ensuring the highest level of security.
+Q: What information do I need to complete during onboarding?
+A: During onboarding, you'll need to provide: personal information (address, emergency contacts), tax forms (W-4), direct deposit information, benefits selections, and signed acknowledgment of company policies. All forms must be completed within your first week of employment.
 
-Q: Can I modify or cancel my order after placing it?
-A: We can only modify or cancel an order if it hasn't yet entered the packing process. Please contact us immediately at support@yourcompany.com or call us at [Your Phone Number] with your order number. We cannot guarantee changes once an order is being prepared for shipment.
+Q: How do I update my personal information after onboarding?
+A: Log into the employee portal, navigate to "My Profile" > "Personal Information," make your changes, and click "Save." Changes to address, phone number, or emergency contacts take effect immediately. Changes to name or tax information require HR approval and may take 2-3 business days.
 
-Q: Why was my payment declined?
-A: Payment can be declined for several reasons, including insufficient funds, incorrect card information, or a security check by your bank. Please verify your details and try again, or contact your bank for more information.
+Q: I forgot my password. How do I reset it?
+A: Click "Forgot Password?" on the login page and enter your work email address. You'll receive a password reset link within 5 minutes. If you don't receive the email, check your spam folder or contact IT support at it-support@company.com.
 
-Shipping & Delivery
-Q: What are your shipping options and costs?
-A: We offer several shipping options at checkout, with costs calculated based on your location, package weight, and delivery speed. Standard shipping (3-7 business days) often has a flat rate or is free on orders over a certain amount. Express and Next-Day options are also available.
+Time Off & Leave Policies
+Q: How do I request time off?
+A: Log into the employee portal, go to "Time Off" > "Request Time Off," select your dates, choose the leave type (vacation, sick, personal), and submit. Requests are automatically routed to your manager for approval. You'll receive an email notification once approved or denied.
 
-Q: How long will it take to receive my order?
+Q: How much paid time off (PTO) do I accrue?
+A: Full-time employees accrue PTO at the following rates: 0-2 years: 15 days/year, 3-5 years: 20 days/year, 6+ years: 25 days/year. PTO accrues monthly and can be used after 90 days of employment. Part-time employees accrue PTO on a pro-rated basis.
 
-Standard Shipping: 3-7 business days.
+Q: Can I carry over unused PTO to the next year?
+A: You can carry over up to 5 days of unused PTO to the next calendar year. Any PTO in excess of 5 days will be forfeited if not used by December 31st. Carry-over requests must be submitted by November 15th.
 
-Express Shipping: 2-3 business days.
+Q: What is the difference between sick leave and personal time?
+A: Sick leave is for illness, medical appointments, or caring for a sick family member. Personal time is for non-medical personal matters. Both count toward your PTO balance, but sick leave may be used without prior approval in emergency situations. Personal time requires manager approval in advance.
 
-Next-Day Shipping: Order by 1 PM local time for delivery the next business day (where available).
+Q: How do I check my current PTO balance?
+A: Log into the employee portal and navigate to "Time Off" > "My Balance." You'll see your accrued PTO, used PTO, pending requests, and available balance. The balance updates in real-time as requests are approved.
 
-*Please note: Processing time (1-2 business days) is separate from shipping time.*
+Q: What is the company's policy on unpaid leave?
+A: Unpaid leave may be granted for extended personal circumstances, medical emergencies, or family care situations. Requests must be submitted at least 30 days in advance (except emergencies) and require approval from both your manager and HR. Unpaid leave is limited to 12 weeks per calendar year.
 
-Q: Do you ship internationally?
-A: Not at this time. We currently only ship within [Your Country, e.g., the United States]. We hope to offer international shipping in the future!
+Benefits & Enrollment
+Q: When can I enroll in or change my benefits?
+A: New employees can enroll during their first 30 days of employment. Existing employees can make changes during the annual open enrollment period (typically November 1-15) or within 30 days of a qualifying life event (marriage, birth, job loss of spouse, etc.).
 
-Q: How can I track my order?
-A: Once your order ships, you will receive a shipping confirmation email with a tracking number and a link to track your package. You can also log into your account on our website to view your order status and tracking information.
+Q: What health insurance options are available?
+A: We offer three health insurance plans: Basic HMO (lower premium, network restrictions), Standard PPO (moderate premium, broader network), and Premium PPO (higher premium, most flexibility). All plans include dental and vision coverage. Detailed plan comparisons are available in the employee portal under "Benefits."
 
-Q: My tracking hasn't updated in a while. What should I do?
-A: Carrier scans can sometimes be delayed. If your tracking hasn't updated for more than 48 hours after the expected scan, please contact us with your order number, and we will investigate with the shipping carrier on your behalf.
+Q: How do I add or remove a dependent from my health insurance?
+A: Log into the employee portal, go to "Benefits" > "Manage Dependents," and follow the prompts. Adding a dependent requires proof of relationship (birth certificate, marriage certificate, etc.) and must be done within 30 days of a qualifying event. Changes take effect the first of the following month.
 
-Returns, Exchanges & Refunds
-Q: What is your return policy?
-A: We offer a 30-day return policy from the date of delivery for most items in original, unworn, and resalable condition, with original tags and packaging. For hygiene reasons, some items (like underwear, swimwear, and pierced jewelry) are final sale unless faulty.
+Q: What is the company's 401(k) matching policy?
+A: The company matches 50% of your contributions up to 6% of your salary. For example, if you contribute 6% of your $50,000 salary ($3,000), the company contributes $1,500. You're fully vested after 3 years of service. Enrollment is available at any time through the employee portal.
 
-Q: How do I start a return or exchange?
-A: The easiest way is to initiate the process through your account on our website under "Order History." Alternatively, you can contact our support team, and we will guide you through the steps and provide a return shipping label if applicable.
+Q: How do I access my benefits information and ID cards?
+A: All benefits information, including digital ID cards, is available in the employee portal under "Benefits" > "My Coverage." You can download ID cards, view claim summaries, find in-network providers, and access benefit resources 24/7.
 
-Q: How long does it take to process a refund?
-A: Once we receive your returned item, it takes 3-5 business days to inspect and process the refund. The time it takes for the refund to appear in your account will depend on your bank or payment provider (typically 5-10 additional business days).
+Payroll & Compensation
+Q: When is payday?
+A: Employees are paid bi-weekly on Fridays. Pay periods run from Sunday to Saturday, and pay is deposited directly into your bank account by 9:00 AM on payday. You can view your pay schedule in the employee portal under "Payroll" > "Pay Schedule."
 
-Q: Who pays for return shipping?
-A: We provide a pre-paid return label for items that are faulty or incorrect due to our error. For returns based on change of mind, the return shipping cost is the responsibility of the customer and will be deducted from your refund.
+Q: How do I access my pay stubs?
+A: Log into the employee portal, go to "Payroll" > "Pay Stubs," and select the pay period you want to view. You can download PDF copies or view them online. Pay stubs are available for the current year and the previous two years.
 
-Account & Technical Issues
-Q: How do I reset my password?
-A: Click on "Log In" and then the "Forgot Password?" link. Enter the email address associated with your account, and we will send you a link to create a new password.
+Q: How do I update my direct deposit information?
+A: Navigate to "Payroll" > "Direct Deposit" in the employee portal, click "Edit," and enter your new bank account information. Changes take effect for the next pay period. You can split your deposit between multiple accounts if needed.
 
-Q: Can I check out as a guest?
-A: Yes, you can! However, creating an account allows you to track your orders easily, save your address for faster checkout, and view your order history.
+Q: I notice an error on my paycheck. What should I do?
+A: Contact Payroll immediately at payroll@company.com or call extension 5678. Include your employee ID, pay period, and a description of the discrepancy. Payroll will investigate and issue a correction within 2-3 business days. For urgent matters, visit the HR office.
 
-Q: The website is not working correctly on my browser. What should I do?
-A: We recommend trying a hard refresh (Ctrl+F5 on Windows, Cmd+Shift+R on Mac), clearing your browser's cache and cookies, or trying a different browser like Chrome or Firefox. If the problem persists, please contact our support team and let us know what device and browser you are using.
+Q: What deductions appear on my paycheck?
+A: Common deductions include: federal and state taxes, Social Security, Medicare, health insurance premiums, dental/vision premiums, 401(k) contributions, HSA contributions (if applicable), and any voluntary deductions you've elected (life insurance, disability, etc.). You can view a detailed breakdown in your pay stub.
 
-Product & Inventory
-Q: How can I be notified when an out-of-stock item is back?
-A: On the product page of the item you want, simply click the "Notify Me When Available" button and enter your email address. We'll send you an alert the moment it's back in stock!
+Q: How do I request a salary advance?
+A: Salary advances are available for emergency situations only and require manager and HR approval. Submit a request through the employee portal under "Payroll" > "Request Advance," explaining the emergency circumstance. Advances are limited to 50% of your next paycheck and are deducted from your next two paychecks.
 
-Q: Are the product colors accurate on the website?
-A: We do our best to represent our products accurately. However, monitor and device displays can vary, so colors may appear slightly different in person. Please refer to the product descriptions for more details.
+Performance & Reviews
+Q: When are performance reviews conducted?
+A: Annual performance reviews are conducted in March for all employees. Mid-year check-ins occur in September. Your manager will schedule a one-on-one meeting to discuss your performance, goals, and development opportunities. Self-evaluations are due one week before your review meeting.
 
-Q: Do you have physical stores?
-A: We are currently an online-only retailer. This allows us to keep our prices competitive and offer a wider selection of products.
+Q: How do I access my performance review documents?
+A: Performance reviews are stored in the employee portal under "Performance" > "My Reviews." You can view past reviews, download PDF copies, and track your goals. Reviews remain in your file for the duration of your employment.
 
-Contact & Support
-Q: What's the best way to contact customer service?
-A: For the fastest response, please email us at support@yourcompany.com. For urgent issues, you can call us at [Your Phone Number] during our business hours: Monday-Friday, 9:00 AM - 6:00 PM EST.
+Q: Can I request feedback outside of the formal review cycle?
+A: Yes, you can request feedback at any time. Schedule a one-on-one with your manager or use the "Request Feedback" feature in the employee portal. Continuous feedback is encouraged and helps with professional development.
 
-Q: How quickly can I expect a response?
-A: We strive to respond to all emails within 24 hours during business days. We are often much faster!
+Time Tracking & Attendance
+Q: How do I clock in and out?
+A: Use the employee portal mobile app or web browser to clock in/out. Navigate to "Time Tracking" > "Clock In/Out" and tap the button. You'll receive a confirmation notification. For employees working on-site, badge scanners are also available at building entrances.
 
-Still have a question?
-Don't hesitate to reach out to our friendly customer service team. We're here to help!
-Email: support@yourcompany.com
+Q: What should I do if I forget to clock in or out?
+A: Submit a time correction request in the employee portal under "Time Tracking" > "Time Corrections" within 24 hours. Include the date, correct times, and a brief explanation. Your manager will approve or deny the correction. Repeated corrections may require manager discussion.
+
+Q: How do I view my timesheet?
+A: Log into the employee portal, go to "Time Tracking" > "My Timesheet," and select the pay period you want to view. You can see your clock in/out times, total hours worked, breaks taken, and any time-off entries. Timesheets are locked at the end of each pay period.
+
+Q: What is the company's policy on breaks and meal periods?
+A: Employees working 6+ hours are entitled to a 30-minute unpaid meal break. Employees working 4+ hours are entitled to a 15-minute paid rest break. Breaks should be taken away from your workstation. Break times should be recorded in your timesheet.
+
+Q: How do I report overtime?
+A: Overtime (hours worked over 40 per week) must be pre-approved by your manager. Log your overtime hours in your timesheet and ensure your manager has approved the overtime request. Overtime is paid at 1.5x your regular hourly rate.
+
+Company Policies & Procedures
+Q: What is the company's remote work policy?
+A: Employees in eligible roles may work remotely up to 3 days per week with manager approval. Remote work eligibility is determined by job function and performance. Employees must have a dedicated workspace, reliable internet, and be available during core business hours (9 AM - 3 PM EST).
+
+Q: What is the dress code policy?
+A: Our dress code is business casual. Acceptable attire includes: collared shirts, blouses, dress pants, khakis, skirts (knee-length or longer), and closed-toe shoes. Unacceptable items include: shorts, flip-flops, tank tops, and clothing with offensive graphics. When meeting clients, business professional attire is required.
+
+Q: What is the company's expense reimbursement policy?
+A: Business expenses (travel, meals, supplies) must be pre-approved by your manager for amounts over $100. Submit expense reports through the employee portal under "Expenses" within 30 days of incurring the expense. Include receipts for all expenses. Reimbursement typically takes 5-7 business days after approval.
+
+Q: Can I use company equipment (laptop, phone) for personal use?
+A: Limited personal use of company equipment is permitted during non-work hours, but work-related activities take priority. Personal use must comply with company IT policies and should not interfere with work performance. All data on company equipment is subject to company monitoring and privacy policies.
+
+Q: What is the company's social media policy?
+A: Employees may not post confidential company information, disparage the company or colleagues, or represent themselves as official company spokespersons without authorization. Personal social media use during work hours should be minimal and not interfere with job duties.
+
+Compliance & Legal
+Q: How is my personal data protected?
+A: We comply with GDPR, CCPA, and other data privacy regulations. Your personal data is encrypted, stored securely, and only accessible to authorized HR and management personnel. You can request access to your data or request deletion (where legally permissible) by contacting privacy@company.com.
+
+Q: What should I do if I experience harassment or discrimination?
+A: Report incidents immediately to HR, your manager, or through our anonymous reporting hotline (1-800-XXX-XXXX). All reports are taken seriously and investigated promptly. Retaliation against individuals who report concerns is strictly prohibited and will result in disciplinary action.
+
+Q: How long are employee records retained?
+A: Employee records are retained according to legal requirements: payroll records (7 years), I-9 forms (3 years after termination or 1 year after hire, whichever is later), performance reviews (duration of employment plus 7 years), and medical records (30 years). Records are securely destroyed after retention periods expire.
+
+Software & Technical Support
+Q: The employee portal is not loading. What should I do?
+A: Try these steps: clear your browser cache, try a different browser (Chrome or Firefox recommended), disable browser extensions, or try incognito/private mode. If issues persist, contact IT support at it-support@company.com or call extension 9999. Include screenshots and error messages if possible.
+
+Q: How do I access the employee portal on my mobile device?
+A: Download the "Company Employee Portal" app from the App Store (iOS) or Google Play (Android). Log in with your employee credentials. The mobile app provides access to time tracking, pay stubs, benefits, and time-off requests. Enable push notifications for important updates.
+
+Q: How do I update my emergency contacts?
+A: Log into the employee portal, go to "My Profile" > "Emergency Contacts," click "Edit," and add or update contact information. You can add up to 3 emergency contacts. Changes take effect immediately. It's important to keep this information current.
+
+Q: I'm locked out of my account. How do I regain access?
+A: Contact IT support at it-support@company.com or call extension 9999. You'll need to verify your identity by providing your employee ID, date of birth, and the last 4 digits of your Social Security number. Account access is typically restored within 2 hours during business hours.
+
+Still have questions?
+Our HR team is here to help! Contact us at:
+Email: hr@company.com
+Phone: (555) 123-4567, extension 1234
+Office Hours: Monday-Friday, 8:00 AM - 5:00 PM EST
+Walk-in hours: Tuesday and Thursday, 10:00 AM - 2:00 PM

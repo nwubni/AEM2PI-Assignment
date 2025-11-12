@@ -143,5 +143,39 @@
       "clarity_score": 9,
       "improvements": []
     }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "timestamp": "2025-11-12T17:04:58.030115+00:00",
+    "tokens_prompt": 577,
+    "tokens_completion": 46,
+    "total_tokens": 623,
+    "latency_ms": 4569.13,
+    "estimated_cost_usd": 0.000114,
+    "cache_hit": false,
+    "actions": [
+      "Reassure the user about payment security",
+      "Provide more details if requested"
+    ],
+    "source": [
+      "Ordering & Payment"
+    ],
+    "user_question": "Is it safe to make payments on your platform?",
+    "system_answer": "Yes, it is safe to make payments on our platform as we do not store your full payment details and use PCI-DSS compliant payment gateways.",
+    "chunks_related": [
+      "Ordering & Payment\nQ: What payment methods do you accept?\nA: We accept all major credit/debit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay. All payments are processed through a secure, encrypted gateway for your safety.\n\nQ: Is my payment information secure?\nA: Absolutely. We do not store your full payment details on our servers. All transactions are processed by PCI-DSS compliant payment gateways, ensuring the highest level of security.\n\nQ: Can I modify or cancel my order after placing it?\nA: We can only modify or cancel an order if it hasn't yet entered the packing process. Please contact us immediately at support@yourcompany.com or call us at [Your Phone Number] with your order number. We cannot guarantee changes once an order is being prepared for shipment.\nSource: data/faq_document.txt",
+      "Q: Who pays for return shipping?\nA: We provide a pre-paid return label for items that are faulty or incorrect due to our error. For returns based on change of mind, the return shipping cost is the responsibility of the customer and will be deducted from your refund.\n\nAccount & Technical Issues\nQ: How do I reset my password?\nA: Click on \"Log In\" and then the \"Forgot Password?\" link. Enter the email address associated with your account, and we will send you a link to create a new password.\n\nQ: Can I check out as a guest?\nA: Yes, you can! However, creating an account allows you to track your orders easily, save your address for faster checkout, and view your order history.\nSource: data/faq_document.txt",
+      "Q: Why was my payment declined?\nA: Payment can be declined for several reasons, including insufficient funds, incorrect card information, or a security check by your bank. Please verify your details and try again, or contact your bank for more information.\n\nShipping & Delivery\nQ: What are your shipping options and costs?\nA: We offer several shipping options at checkout, with costs calculated based on your location, package weight, and delivery speed. Standard shipping (3-7 business days) often has a flat rate or is free on orders over a certain amount. Express and Next-Day options are also available.\n\nQ: How long will it take to receive my order?\n\nStandard Shipping: 3-7 business days.\n\nExpress Shipping: 2-3 business days.\n\nNext-Day Shipping: Order by 1 PM local time for delivery the next business day (where available).\n\n*Please note: Processing time (1-2 business days) is separate from shipping time.*\nSource: data/faq_document.txt"
+    ],
+    "confidence": 90,
+    "evaluation": {
+      "overall_score": 9.1,
+      "quality_level": "excellent",
+      "relevance_score": 10,
+      "accuracy_score": 10,
+      "completeness_score": 8,
+      "clarity_score": 9,
+      "improvements": []
+    }
   }
 ]

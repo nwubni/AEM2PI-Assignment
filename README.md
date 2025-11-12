@@ -1,7 +1,7 @@
 # AEM2PI-Assignment
 Andela GenAI Second Assignment
 
-This project uses Retrieval-Augmented Generation (RAG) to answer customer queries for an SAAS company. Customer queries are answered based on the company's FAQ document. It utilizes the LangChain library to achieve this objective because the library provides a high level of abstraction and ease of use for building production-ready RAG applications.
+This project uses Retrieval-Augmented Generation (RAG) to answer employee questions for an HR SaaS company. Customer support receives 200+ repetitive questions daily about policies, features, and procedures already documented in internal FAQs and guides. This intelligent FAQ Support Chatbot instantly answers employee questions by retrieving relevant information from the company's documentation without requiring manual search or agent intervention. It utilizes the LangChain library to achieve this objective because the library provides a high level of abstraction and ease of use for building production-ready RAG applications.
 
 ## Features
 
