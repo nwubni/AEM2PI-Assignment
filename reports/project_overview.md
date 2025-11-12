@@ -1,5 +1,5 @@
 ## Project Overview and Report
-This project builds on the knowledge gained from Module 1.
+This project builds on the knowledge gained from Module 1.<br>
 It uses Retrieval-Augmented Generation (RAG) to implement a customer inquiry mechanism that answers questions based on the company’s internal data to provide context and generate referenceable responses.
 Rather than implementing the entire pipeline from scratch, this project leverages the LangChain library to implement the RAG pipeline. This standardizes the codebase to make the artifact production-ready and easier to scale and maintain with multiple contributors. Additionally, LangChain's open-source components are used to chunk documents, embed, and store them locally for free. Only LLM API calls may incur charges.
 
@@ -163,7 +163,7 @@ To minimize spending, which can be directly linked to prompt length, I took meas
 
 
 ### Evaluator
-An LLM-based automated evaluator scores each answer on a scale of 0-10 across relevance, accuracy, completeness, clarity, and gives an overall score with suggested improvements. Results are logged with the query response metrics for monitoring and future iteration.
+I implemented an LLM-based (`gpt-4o-mini`) automated evaluator that scores each answer on a scale of 0-10 across relevance, accuracy, completeness, clarity, and gives an overall score with suggested improvements. Results are logged with the query response metrics for monitoring and future iteration.
 
 ### Performance and Scalability
 - Current dataset size: Since the data size is in the thousands, the `IndexFlatL2` (Euclidean distance) is sufficient for this project because it provides 100% recall with negligible latency for this use case. Additionally, it can scale well into the low tens of thousands of chunks before advanced FAISS indexes (IVF/HNSW) are necessary.
