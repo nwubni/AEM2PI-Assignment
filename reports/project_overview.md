@@ -1,14 +1,14 @@
 ## Project Overview and Report
 This project builds on the knowledge gained from Module 1.
 It uses Retrieval-Augmented Generation (RAG) to implement a customer inquiry mechanism that answers questions based on the company’s internal data to provide context and generate referenceable responses.
-Rather than implementing the entire pipeline from scratch, this project leverages the LangChain library to implement the RAG pipeline. This standardizes the codebase to make the artifact production-ready and easier to scale and maintain with multiple contributors.
+Rather than implementing the entire pipeline from scratch, this project leverages the LangChain library to implement the RAG pipeline. This standardizes the codebase to make the artifact production-ready and easier to scale and maintain with multiple contributors. Additionally, LangChain's open-source components are used to chunk documents, embed, and store them locally for free. Only LLM API calls may incur charges.
 
 In order to avoid bloating the project and focus on the core concept of RAG, the following assumptions apply:
 1. Moderation has been fully implemented and tests for it are available.
 2. Rate limiting has been properly set up to prevent service abuse.
 
 This RAG project builds a customer inquiry system that answers questions using company's internal data to provide accurate, informed, and verifiable responses.
-It starts by building the data pipeline, which takes the company FAQ document(s) and splits them into chunks.
+It starts by building the data pipeline, which takes the company document(s) such as FAQs and Policies and splits them into chunks.
 Next, an embedding is generated for each chunk and stored in FAISS, a vector storage.
 
 Features
@@ -163,7 +163,7 @@ To minimize spending, which can be directly linked to prompt length, I took meas
 
 
 ### Evaluator
-An LLM-based automated evaluator scores each answer on a scale of 0-10 across relevance, accuracy, completeness, and clarity, and gives an overall score with suggested improvements. Results are logged with the query response metrics for monitoring and future iteration.
+An LLM-based automated evaluator scores each answer on a scale of 0-10 across relevance, accuracy, completeness, clarity, and gives an overall score with suggested improvements. Results are logged with the query response metrics for monitoring and future iteration.
 
 ### Performance and Scalability
 - Current dataset size: Since the data size is in the thousands, the `IndexFlatL2` (Euclidean distance) is sufficient for this project because it provides 100% recall with negligible latency for this use case. Additionally, it can scale well into the low tens of thousands of chunks before advanced FAISS indexes (IVF/HNSW) are necessary.
