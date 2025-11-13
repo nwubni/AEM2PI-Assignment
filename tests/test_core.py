@@ -168,7 +168,7 @@ class TestDocumentRetrieval:
     )
     def test_retrieval_has_metadata(self):
         """Test that retrieved documents have metadata."""
-        query = "What are shipping options?"
+        query = "What is the company's remote work policy?"
         docs = get_relevant_documents(query)
         
         for doc in docs:
@@ -196,25 +196,25 @@ class TestFAQQueries:
         not os.path.exists("storage/faiss_index"),
         reason="FAISS index not built"
     )
-    def test_shipping_query(self):
-        """Test shipping options FAQ query."""
-        query = "What are your shipping options?"
+    def test_remote_work_query(self):
+        """Test remote work policy FAQ query."""
+        query = "What is the company's remote work policy?"
         docs = get_relevant_documents(query)
-        
+
         content = " ".join([doc.page_content for doc in docs])
-        assert "shipping" in content.lower()
+        assert "remote" in content.lower()
 
     @pytest.mark.skipif(
         not os.path.exists("storage/faiss_index"),
         reason="FAISS index not built"
     )
-    def test_return_policy_query(self):
-        """Test return policy FAQ query."""
-        query = "What is your return policy?"
+    def test_expense_reimbursement_query(self):
+        """Test expense reimbursement policy FAQ query."""
+        query = "What is the company's expense reimbursement policy?"
         docs = get_relevant_documents(query)
-        
+
         content = " ".join([doc.page_content for doc in docs])
-        assert "return" in content.lower()
+        assert ("expense" in content.lower()) or ("reimbursement" in content.lower())
 
 
 class TestAnswerGeneration:

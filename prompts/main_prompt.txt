@@ -11,6 +11,8 @@ Analyze the user's question and provide a response based on the information prov
 - "source": Include the source of the information you used (array of strings)
 - "actions": A list of recommended actions for the support agent (array of strings)
 
+If you cannot find an answer from the provided context, say you do not know.
+
 Example 1
 Question: What payment options do you have?
 Response:

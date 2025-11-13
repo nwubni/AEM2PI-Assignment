@@ -1,7 +1,7 @@
 ## Project Overview and Report
 This project builds on the knowledge gained from Module 1.
 
-However, this time, it uses Retrieval-Augmented Generation (RAG) to implement an intelligent FAQ Support Chatbot for an HR SaaS company. Customer support receives 200+ repetitive questions daily about policies, features, and procedures already documented in internal FAQs and guides. This system answers employee questions by retrieving relevant information from the company's documentation to provide context and generate referenceable responses.
+However, this time, it uses Retrieval-Augmented Generation (RAG) to implement an intelligent FAQ Support Chatbot for an HR SaaS company. Customer support receives repetitive questions daily about policies, features, and procedures already documented in internal FAQs and guides. This system answers employee questions by retrieving relevant information from the company's documentation to provide context and generate referenceable responses.
 Rather than implementing the entire pipeline from scratch, this project leverages the LangChain library to implement the RAG pipeline. This standardizes the codebase to make the artifact production-ready and easier to scale and maintain with multiple contributors. Additionally, I used open-source components such as `langchain-text-splitters` to chunk documents, `langchain-huggingface` to embed, and `faiss` to store them locally for free. Only LLM API calls may incur charges.
 
 In order to avoid bloating the project and focus on the core concept of RAG, the following assumptions apply:
@@ -14,7 +14,7 @@ Next, an embedding is generated for each chunk and stored in FAISS, a vector dat
 
 Features
 - LangChain-based RAG pipeline (FAISS + HuggingFace embeddings + OpenAI LLM)
-- Smart context truncation preserving complete Q&A pairs to control tokens and cost
+- Context truncation preserving complete Q&A pairs to control tokens and cost
 - Response caching with query normalization for faster, cheaper repeated queries
 - Automated evaluator that scores answers on relevance, accuracy, completeness, and clarity
 - Cost and latency tracking for each query, logged to `outputs/sample_queries.json`
@@ -159,10 +159,10 @@ System Response:
   ```
 
 
-One of the major factors to consider carefully in AI systems is costs.
+Some major factors to consider carefully in AI systems are scaling and costs.
 To minimize spending, which can be directly linked to prompt length, the system implements measures that reduce token length and cut API calls when possible. They are as follows:
 1. Prompt truncation to keep the prompt's length within model limit and only use what’s necessary to give the LLM the context it needs to answer the question effectively.
-2. Response caching to eliminate API calls for repeated user queries. Since the context of this project is to answer high volume of employee questions (200+ daily), caching is essential to reduce costs. The cache uses a composite key made from a normalized user query and a deterministic hash of the retrieved context (the chunks used in the prompt), to map semantically identical questions with the same context to the same entry. The cache persists to `storage/response_cache.json`.
+2. Response caching to eliminate API calls for repeated user queries. Since the context of this project is to answer high volume of employee questions daily, caching is essential to reduce costs. The cache uses a composite key made from a normalized user query and a deterministic hash of the retrieved context (the chunks used in the prompt), to map semantically identical questions with the same context to the same entry. The cache persists to `storage/response_cache.json`.
 3. Chunk retrieval is limited to top 3 to balance cost and answer quality.
 
 
@@ -170,7 +170,7 @@ To minimize spending, which can be directly linked to prompt length, the system 
 The system includes an LLM-based (`gpt-4o-mini`) automated evaluator that scores each answer on a scale of 0-10 across relevance, accuracy, completeness, clarity, and provides an overall score with suggested improvements. Results are logged with the query response metrics for monitoring and future iteration.
 
 ### Performance and Scalability
-- Current dataset size: Since the data size is in the thousands, the flat FAISS index (using cosine similarity) is sufficient for this project because it provides 100% recall with negligible latency for this use case. Additionally, it can scale well into the low tens of thousands of chunks before advanced FAISS indexes (IVF/HNSW) are necessary.
+- Current dataset size: This project can easily support data size in the thousands. Therefore, the flat FAISS index (using cosine similarity) is sufficient for this project because it provides 100% recall with negligible latency for this use case. Additionally, it can scale well into the low tens of thousands of chunks before advanced FAISS indexes (IVF/HNSW) are necessary.
 - The system tracks latency and costs per request to enable data-driven tuning.
 
 ### Testing
