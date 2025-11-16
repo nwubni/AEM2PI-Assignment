@@ -69,5 +69,41 @@
         "Clarify the distinction between unpaid leave and paid time off, as the user may be interested in both."
       ]
     }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "timestamp": "2025-11-16T12:53:33.611009+00:00",
+    "tokens_prompt": 604,
+    "tokens_completion": 29,
+    "total_tokens": 633,
+    "latency_ms": 8826.14,
+    "estimated_cost_usd": 0.000108,
+    "cache_hit": false,
+    "actions": [
+      "Recommend the user contact HR for detailed information on sabbaticals"
+    ],
+    "source": [
+      "fallback"
+    ],
+    "user_question": "What is the company's policy on sabbaticals?",
+    "system_answer": "I do not have information on the company's policy regarding sabbaticals.",
+    "chunks_related": [
+      "Q: What is the company's policy on breaks and meal periods?\nA: Employees working 6+ hours are entitled to a 30-minute unpaid meal break. Employees working 4+ hours are entitled to a 15-minute paid rest break. Breaks should be taken away from your workstation. Break times should be recorded in your timesheet.\n\nQ: How do I report overtime?\nA: Overtime (hours worked over 40 per week) must be pre-approved by your manager. Log your overtime hours in your timesheet and ensure your manager has approved the overtime request. Overtime is paid at 1.5x your regular hourly rate.\n\nCompany Policies & Procedures\nQ: What is the company's remote work policy?\nA: Employees in eligible roles may work remotely up to 3 days per week with manager approval. Remote work eligibility is determined by job function and performance. Employees must have a dedicated workspace, reliable internet, and be available during core business hours (9 AM - 3 PM EST).\nSource: data/faq_document.txt",
+      "Q: How do I check my current PTO balance?\nA: Log into the employee portal and navigate to \"Time Off\" > \"My Balance.\" You'll see your accrued PTO, used PTO, pending requests, and available balance. The balance updates in real-time as requests are approved.\n\nQ: What is the company's policy on unpaid leave?\nA: Unpaid leave may be granted for extended personal circumstances, medical emergencies, or family care situations. Requests must be submitted at least 30 days in advance (except emergencies) and require approval from both your manager and HR. Unpaid leave is limited to 12 weeks per calendar year.\n\nBenefits & Enrollment\nQ: When can I enroll in or change my benefits?\nA: New employees can enroll during their first 30 days of employment. Existing employees can make changes during the annual open enrollment period (typically November 1-15) or within 30 days of a qualifying life event (marriage, birth, job loss of spouse, etc.).\nSource: data/faq_document.txt",
+      "Q: Can I use company equipment (laptop, phone) for personal use?\nA: Limited personal use of company equipment is permitted during non-work hours, but work-related activities take priority. Personal use must comply with company IT policies and should not interfere with work performance. All data on company equipment is subject to company monitoring and privacy policies.\n\nQ: What is the company's social media policy?\nA: Employees may not post confidential company information, disparage the company or colleagues, or represent themselves as official company spokespersons without authorization. Personal social media use during work hours should be minimal and not interfere with job duties.\nSource: data/faq_document.txt"
+    ],
+    "confidence": 10,
+    "evaluation": {
+      "overall_score": 5.6,
+      "quality_level": "poor",
+      "relevance_score": 2,
+      "accuracy_score": 10,
+      "completeness_score": 2,
+      "clarity_score": 8,
+      "improvements": [
+        "Include a suggestion to contact HR or check the employee handbook for sabbatical policies.",
+        "Provide a brief explanation of what a sabbatical is, if applicable, to give context to the user."
+      ]
+    }
   }
 ]

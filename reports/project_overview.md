@@ -1,18 +1,16 @@
-## Project Overview and Report
-This project builds on the knowledge gained from Module 1.
+# Project Overview and Report
 
-However, this time, it uses Retrieval-Augmented Generation (RAG) to implement an intelligent FAQ Support Chatbot for an HR SaaS company. Customer support receives repetitive questions daily about policies, features, and procedures already documented in internal FAQs and guides. This system answers employee questions by retrieving relevant information from the company's documentation to provide context and generate referenceable responses.
+This project builds on the knowledge gained from Module 1 and uses Retrieval-Augmented Generation (RAG) to implement an intelligent FAQ Support Chatbot for an HR SaaS company. Customer support receives repetitive questions daily about policies, features, and procedures already documented in internal FAQs and guides. This system answers employee and customer questions by retrieving relevant information from the company's documentation to provide context and generate referenceable responses.
+
 Rather than implementing the entire pipeline from scratch, this project leverages the LangChain library to implement the RAG pipeline. This standardizes the codebase to make the artifact production-ready and easier to scale and maintain with multiple contributors. Additionally, I used open-source components such as `langchain-text-splitters` to chunk documents, `langchain-huggingface` to embed, and `faiss` to store them locally for free. Only LLM API calls may incur charges.
 
 In order to avoid bloating the project and focus on the core concept of RAG, the following assumptions apply:
 1. Moderation has been fully implemented and tests for it are available.
 2. Rate limiting has been properly set up to prevent service abuse.
 
-This RAG project builds an intelligent FAQ Support Chatbot for an HR SaaS company that answers employee questions about policies, features, and procedures using the company's internal documentation to provide accurate, informed, and verifiable responses.
-The system starts by building the data pipeline, which takes the company document(s) such as FAQs and Policies and splits them into chunks.
-Next, an embedding is generated for each chunk and stored in FAISS, a vector database.
+The system starts by building the data pipeline, which takes the company document(s) such as FAQs and Policies and splits them into chunks. Next, an embedding is generated for each chunk and stored in FAISS, a vector database.
 
-Features
+## Features
 - LangChain-based RAG pipeline (FAISS + HuggingFace embeddings + OpenAI LLM)
 - Context truncation preserving complete Q&A pairs to control tokens and cost
 - Response caching with query normalization for faster, cheaper repeated queries
@@ -20,7 +18,7 @@ Features
 - Cost and latency tracking for each query, logged to `outputs/sample_queries.json`
 - Comprehensive pytest suite (retrieval, caching, truncation, evaluator, edge cases)
 
-Architecture
+## Architecture
 - `data/faq_document.txt`: The company's FAQ document.
 - `src/build_index.py`: Builds the FAISS index from FAQ documents, adds rich metadata per chunk.
 - `src/query.py`: End-to-end query pipeline (retrieval, truncation, LLM, evaluator, metrics logging).
@@ -32,13 +30,15 @@ Architecture
 - `outputs`: Directory for storing the sample queries and evaluation results.
 
 ### Data Pipeline
-Steps
-1. Chunking
+
+**Steps:**
+
+1. **Chunking**
    - The FAQ document is split using a sliding window (`chunk_size=1000`, `chunk_overlap=200`) through `RecursiveCharacterTextSplitter` to maintain chunk context between Q&A pairs.
    - Each chunk carries metadata: `id`, `document_id`, `chunk_index`, `token_count`, `char_count`, and `created_at`. These additional data can be useful for extending functionalities to include keyword searches or retrieval filtering.
-2. Embedding
+2. **Embedding**
    - Text is converted to vectors using `all-MiniLM-L6-v2` (which has a 384-dimensional vector space) via `langchain-huggingface`.
-3. Indexing and Storage
+3. **Indexing and Storage**
    - Chunks and embeddings are stored in a FAISS index (using cosine similarity via inner product) for high-recall semantic search.
 
 Data Pipeline Build Command:
@@ -51,12 +51,12 @@ python -m src.build_index data/faq_document.txt
 ### Query Pipeline
 With the data pipeline in place, the query process answers user questions using semantic retrieval over the indexed FAQ chunks.
 
-Steps:
+**Steps:**
 1. Read and embed the user query via the CLI argument.
 2. Retrieve the top-k (k=3) relevant chunks using the embedded user query via FAISS cosine similarity search.
 3. Apply truncation to preserve complete Q&A pairs, remove redundancy, and keep prompts within token budgets.
 4. Invoke the LLM (`gpt-4o-mini`) with a structured system prompt and the truncated context.
-5. Get and log metrics and responses to `outputs/sample_queries.json` including `cost`, `latency`, `timestamp`, `user_question`, `system_answer`, `actions`, `chunks_related`, `source`, `confidence`, and `evaluation scores`.
+5. Get and log metrics and responses to `outputs/sample_queries.json` including `cost`, `latency`, `timestamp`, `user_question`, `system_answer`, `actions`, `chunks_related`, `source`, `confidence`, and `evaluation` scores.
 
 Query Pipeline Command:
 ```bash
@@ -159,11 +159,13 @@ System Response:
   ```
 
 
-Some major factors to consider carefully in AI systems are scaling and costs.
+Some major factors to consider carefully in AI systems are scaling, latency, and costs.
 To minimize spending, which can be directly linked to prompt length, the system implements measures that reduce token length and cut API calls when possible. They are as follows:
 1. Prompt truncation to keep the prompt's length within model limit and only use what’s necessary to give the LLM the context it needs to answer the question effectively.
-2. Response caching to eliminate API calls for repeated user queries. Since the context of this project is to answer high volume of employee questions daily, caching is essential to reduce costs. The cache uses a composite key made from a normalized user query and a deterministic hash of the retrieved context (the chunks used in the prompt), to map semantically identical questions with the same context to the same entry. The cache persists to `storage/response_cache.json`.
+2. Response caching to eliminate API calls for repeated user queries. Since the context of this project is to answer high volume of repeating inquiries daily, caching is essential to reduce costs. The cache uses a composite key made from a normalized user query and a deterministic hash of the retrieved context (the chunks used in the prompt), to map semantically identical questions with the same context to the same entry. The cache persists to `storage/response_cache.json`.
 3. Chunk retrieval is limited to top 3 to balance cost and answer quality.
+
+For latency, the system utilizes local embeddings and caching to reduce the time taken to generate responses, and only makes external calls to LLM APIs when necessary.
 
 
 ### Evaluator
@@ -186,3 +188,14 @@ The test coverage includes:
 - Document retrieval relevance and metadata
 - Answer generation (prompt formatting, LLM response parsing)
 - Evaluator scoring and logging
+
+### Challenges
+
+Initially, I built the project without LangChain and ran into some issues quickly. Among them was having to write functions and classes for making API calls to LLMs. Another challenge I faced was with text chunking and embedding generation.
+
+Switching to LangChain simplified all of these issues, made the codebase maintainable, and gave it a better structure to scale. It also enabled me to iterate my solution quickly and finish on time.
+
+### Known Limitations
+
+- **Cache latency measurement**: Cached responses show `latency_ms: 0` to indicate cache hits, but the actual cache lookup time is not measured and logged.
+- **Error handling**: Limited error handling for edge cases such as corrupted FAISS index files, invalid document formats, or network failures during API calls.

@@ -258,7 +258,7 @@ def main():
         # If there is a cache hit, cost is 0
         if result.get("cache_hit", False):
             cost = 0.0
-            print("\n✓ Response retrieved from cache (instant, $0 cost)")
+            print("\nResponse retrieved from cache (instant, $0 cost)")
         else:
             cost = calculate_cost(
                 MODEL, result["tokens_prompt"], result["tokens_completion"]
